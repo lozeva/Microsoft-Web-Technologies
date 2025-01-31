@@ -1,0 +1,99 @@
+﻿.recharge-container {
+    text-align: center;
+    padding: 20px;
+    margin-top: -8px;
+    max-width: 550px;
+    margin-left: 30px;
+}
+
+.main-heading {
+    font-size: 31px;
+    font-weight: bold;
+    text-align: center;
+    color: #666;
+}
+
+.second-heading {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+.main-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #866699;
+    border: 2px solid #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-size: 16px;
+}
+
+.tab:hover {
+    background-color: #6b527a;
+    transition: background 0.3s ease-in-out;
+    color: white;
+    transform: scale(1.05);
+}
+
+.tab.active {
+    background-color: #43334d;
+    color: white;
+}
+
+.tab-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}

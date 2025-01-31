@@ -1,0 +1,340 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/css/styleMaster.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 415px;
+        }
+
+        .auto-style2 {
+            width: 659px;
+        }
+
+        .auto-style3 {
+            width: 489px;
+        }
+
+        td.auto-style1, td.auto-style2, td.auto-style3 {
+            vertical-align: top;
+            min-height: 400px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Panel runat="server">
+            <table style="width: 100%;">
+
+                <!-- This is the nav bar -> 1Row -->
+                <tr>
+                    <td>
+                        <asp:Panel CssClass="navDiv" runat="server">
+
+                            <!-- Logo section -->
+                            <asp:Panel CssClass="logo" runat="server">
+                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Home.aspx">
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Pictures/logo1.png" Height="110px" Width="120px" />
+                                </asp:HyperLink>
+                            </asp:Panel>
+
+                            <!-- Menu items -->
+                            <asp:Panel CssClass="navbar-container" runat="server">
+                                <asp:Panel CssClass="navbarPages" runat="server">
+                                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="asp-menu">
+                                        <Items>
+                                            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Prices" Value="Prices" NavigateUrl="~/Prices.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Opinions" Value="Opinions" NavigateUrl="~/Opinions.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Contact" Value="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </asp:Panel>
+                                <asp:Panel CssClass="loginRegister" runat="server">
+
+                                    <!-- Logged-in Panel -->
+                                    <asp:Panel ID="LoggedInPanel" runat="server" Visible="false">
+                                        <span class="greeting">Hello,
+                                            <span class="username">
+                                                <asp:Literal ID="UsernameLiteral" runat="server"></asp:Literal>
+                                            </span>
+                                        </span>
+                                        <asp:Button ID="LogoutButton" runat="server" Text="Log out" OnClick="LogoutButton_Click" CssClass="logout-button" />
+                                    </asp:Panel>
+
+                                    <!-- Logged-out Panel -->
+                                    <asp:Panel ID="LoggedOutPanel" runat="server" Visible="true">
+                                        <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" CssClass="asp-menu">
+                                            <Items>
+                                                <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                                                <asp:MenuItem Text="Register" Value="Register" NavigateUrl="~/Register.aspx"></asp:MenuItem>
+                                            </Items>
+                                        </asp:Menu>
+                                    </asp:Panel>
+
+                                </asp:Panel>
+                            </asp:Panel>
+                        </asp:Panel>
+                    </td>
+                </tr>
+
+                <!-- This is the Bootstrap Carousel -> 2Row -->
+                <tr class="carouselRow">
+                    <td>
+                        <div class="container carouselContainer">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <asp:Image ID="Image8" runat="server" ImageUrl="~/Pictures/fzone.jpg" Height="490px" Width="1270px" />
+                                    </div>
+                                    <div class="item">
+                                        <asp:Image ID="Image9" runat="server" ImageUrl="~/Pictures/spa.jpg" Height="490px" Width="1270px" />
+                                    </div>
+                                    <div class="item">
+                                        <asp:Image ID="Image10" runat="server" ImageUrl="~/Pictures/szone.jpg" Height="490px" Width="1270px" />
+                                    </div>
+                                </div>
+                                <!-- Centered motivational text and button -->
+                                <div class="carousel-caption-custom">
+                                    <div>
+                                        <h1 class="carouselHeading">Push your limits</h1>
+                                        <p class="carouselParagraph">every day</p>
+                                    </div>
+                                    <a href="Prices.aspx">
+                                        <input id="Button1" type="button" value="Buy a membership" class="membership-button" />
+                                    </a>
+                                </div>
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- This is the 3Row -->
+                <tr>
+                    <td>
+                        <table style="width: 100%;">
+                            <tr>
+
+                                <!-- Table (for the News) -> 3Row 1Cell -->
+                                <td class="auto-style1 newsTable">
+                                    <table style="width: 35%;">
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="news" runat="server">
+                                                    <asp:Panel CssClass="newsHeader" runat="server">
+                                                        <asp:Literal ID="NewsHeading" runat="server" Text="<h1 style='font-weight: 600;'>News</h1>" />
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                        <!-- First new -->
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="news" runat="server">
+                                                    <asp:Panel CssClass="newsImageContainer" runat="server">
+                                                        <asp:Image ID="Image2" runat="server" Height="250px" ImageUrl="~/Pictures/news1.jpg" Width="410px" />
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="newsContainer" Style="font-size: 16px;" runat="server">
+                                                        <asp:Label ID="Label2" runat="server" Text="Should I train outside or in the gym? That is the question."></asp:Label>
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="buttonsContainer" runat="server">
+                                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="#" CssClass="button2">Learn more</asp:HyperLink>
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Second new -->
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="news" runat="server">
+                                                    <asp:Panel CssClass="newsImageContainer" runat="server">
+                                                        <asp:Image ID="Image3" runat="server" Height="250px" ImageUrl="~/Pictures/news2.png" Width="410px" />
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="newsContainer" Style="font-size: 16px;" runat="server">
+                                                        <asp:Label ID="Label3" runat="server" Text="Recharge your immunity"></asp:Label>
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="buttonsContainer" runat="server">
+                                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/News2.aspx" CssClass="button2">Learn more</asp:HyperLink>
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Third new -->
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="news" runat="server">
+                                                    <asp:Panel CssClass="newsImageContainer" runat="server">
+                                                        <asp:Image ID="Image4" runat="server" Height="250px" ImageUrl="~/Pictures/news3.png" Width="410px" />
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="newsContainer" Style="font-size: 16px;" runat="server">
+                                                        <asp:Label ID="Label4" runat="server" Text="Staying fit over the festive season: Your guide to a healthy and active Christmas"></asp:Label>
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="buttonsContainer" runat="server">
+                                                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="#" CssClass="button2">Learn more</asp:HyperLink>
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+
+                                <!-- This is the main content -> 3Row 2Cell -->
+                                <td class="auto-style2">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                        <asp:Literal ID="MainContentText" runat="server" Text="<p>MAIN CONTENT</p>" />
+                                    </asp:ContentPlaceHolder>
+                                </td>
+
+                                <!-- Table (for the Hotels) -> 3Row 3Cell -->
+                                <td class="auto-style1 hotelsTable">
+                                    <table style="width: 35%;">
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="hotels" runat="server">
+                                                    <asp:Panel CssClass="hotelsHeader" runat="server">
+                                                        <asp:Literal ID="HotelsHeading" runat="server" Text="<h1 style='font-weight: 600;'>Privileges</h1>" />
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                        <!-- First hotel -->
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="hotels" runat="server">
+                                                    <asp:Panel CssClass="newsImageContainer" runat="server">
+                                                        <asp:Image ID="Image5" runat="server" Height="250px" ImageUrl="~/Pictures/therme.jpg" Width="410px" />
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="newsContainer" Style="font-size: 16px;" runat="server">
+                                                        <asp:Label ID="Label5" runat="server" Text="Grand Hotel Therme"></asp:Label>
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="buttonsContainerP" runat="server">
+                                                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="https://grandhotel.bg/grand-hotel-terme/" CssClass="button3">Learn more</asp:HyperLink>
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Second hotel -->
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="hotels" runat="server">
+                                                    <asp:Panel CssClass="newsImageContainer" runat="server">
+                                                        <asp:Image ID="Image6" runat="server" Height="250px" ImageUrl="~/Pictures/svetiVlas.jpg" Width="410px" />
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="newsContainer" Style="font-size: 16px;" runat="server">
+                                                        <asp:Label ID="Label6" runat="server" Text="Grand Hotel Sveti Vlas"></asp:Label>
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="buttonsContainerP" runat="server">
+                                                        <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="https://grandhotelsvetivlas.bg/" CssClass="button3">Learn more</asp:HyperLink>
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                        <!-- Third hotel -->
+                                        <tr>
+                                            <td class="auto-style3">
+                                                <asp:Panel CssClass="hotels" runat="server">
+                                                    <asp:Panel CssClass="newsImageContainer" runat="server">
+                                                        <asp:Image ID="Image7" runat="server" Height="250px" ImageUrl="~/Pictures/bansko.jpg" Width="410px" />
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="newsContainer" Style="font-size: 16px;" runat="server">
+                                                        <asp:Label ID="Label7" runat="server" Text="Grand Hotel Bansko"></asp:Label>
+                                                    </asp:Panel>
+                                                    <asp:Panel CssClass="buttonsContainerP" runat="server">
+                                                        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="https://grandhotelbansko.bg/" CssClass="button3">Learn more</asp:HyperLink>
+                                                    </asp:Panel>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- This is the footer -> 4Row -->
+                <tr>
+                    <td>
+                        <asp:Panel runat="server">
+                            <footer>
+                                <asp:Panel CssClass="footer" runat="server">
+                                    <asp:Panel CssClass="col-1" runat="server">
+                                        <asp:Literal ID="UsefulLinks" runat="server" Text="<h3>USEFUL LINKS</h3>" />
+
+                                        <!-- Footer menu items -->
+                                        <asp:Panel CssClass="footerPages" runat="server">
+                                            <asp:Menu ID="Menu3" runat="server" Orientation="Horizontal" CssClass="asp-menu">
+                                                <Items>
+                                                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Prices" Value="Prices" NavigateUrl="~/Prices.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Opinions" Value="Opinions" NavigateUrl="~/Opinions.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Contact" Value="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                                                </Items>
+                                            </asp:Menu>
+                                            <asp:Menu ID="AdminMenuFooter" runat="server" Orientation="Horizontal" CssClass="asp-menu adminMenuFooter" Visible="false">
+                                                <Items>
+                                                    <asp:MenuItem Text="Database" Value="Admin" NavigateUrl="~/DataBase.aspx"></asp:MenuItem>
+                                                </Items>
+                                            </asp:Menu>
+                                        </asp:Panel>
+
+                                    </asp:Panel>
+                                    <asp:Panel CssClass="col-2" runat="server">
+                                        <asp:Literal ID="NewsletterHeading" runat="server" Text="<h3>NEWSLETTER</h3>" />
+                                        <form>
+                                            <asp:TextBox ID="EmailTextBox1" runat="server" CssClass="form-input" Placeholder="Your Email Address" TextMode="Email" />
+                                            <asp:Panel runat="server">
+                                                <asp:Button ID="Button8" runat="server" Text="SUBSCRIBE NOW" />
+                                            </asp:Panel>
+                                        </form>
+                                    </asp:Panel>
+                                    <asp:Panel CssClass="col-3" runat="server">
+                                        <asp:Literal ID="MainBuildingHeading" runat="server" Text="<h3>Main building</h3>" />
+                                        <asp:Literal ID="MainBuildingAddress" runat="server" Text="<p>Street &quot;Rezbarska&quot; 47</p><p>Sofia, Bulgaria</p>" />
+                                    </asp:Panel>
+                                </asp:Panel>
+                            </footer>
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+    </form>
+    <script src="js/jsMaster.js"></script>
+</body>
+</html>

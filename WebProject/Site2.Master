@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="WebProject.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/css/styleMaster.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            height: 23px;
+        }
+
+        .auto-style2 {
+            width: 659px;
+        }
+
+        td.auto-style1, td.auto-style2 {
+            vertical-align: top;
+            min-height: 400px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table style="width: 100%;">
+
+                <!--First row -> Nav bar -->
+                <tr>
+                    <td class="auto-style1">
+                        <asp:Panel CssClass="navDiv" runat="server">
+
+                            <!-- Logo section -->
+                            <asp:Panel CssClass="logo" runat="server">
+                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Home.aspx">
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Pictures/logo1.png" Height="104px" Width="110px" />
+                                </asp:HyperLink>
+                            </asp:Panel>
+
+                            <!-- Menu items -->
+                            <asp:Panel CssClass="navbar-container" runat="server">
+                                <asp:Panel CssClass="navbarPages" runat="server">
+                                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="asp-menu">
+                                        <Items>
+                                            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Prices" Value="Prices" NavigateUrl="~/Prices.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Opinions" Value="Opinions" NavigateUrl="~/Opinions.aspx"></asp:MenuItem>
+                                            <asp:MenuItem Text="Contact" Value="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                                        </Items>
+                                    </asp:Menu>
+                                </asp:Panel>
+                                <asp:Panel CssClass="loginRegister" runat="server">
+                                    <!-- Logged-in Panel -->
+                                    <asp:Panel ID="LoggedInPanel" runat="server" Visible="false">
+                                        <span class="greeting">Hello,
+                                            <span class="username">
+                                                <asp:Literal ID="UsernameLiteral" runat="server"></asp:Literal>
+                                            </span>
+                                        </span>
+                                        <asp:Button ID="LogoutButton" runat="server" Text="Log out" OnClick="LogoutButton_Click" CssClass="logout-button" />
+                                    </asp:Panel>
+
+                                    <!-- Logged-out Panel -->
+                                    <asp:Panel ID="LoggedOutPanel" runat="server" Visible="true">
+                                        <asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" CssClass="asp-menu">
+                                            <Items>
+                                                <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                                                <asp:MenuItem Text="Register" Value="Register" NavigateUrl="~/Register.aspx"></asp:MenuItem>
+                                            </Items>
+                                        </asp:Menu>
+                                    </asp:Panel>
+                                </asp:Panel>
+                            </asp:Panel>
+
+                        </asp:Panel>
+                    </td>
+                </tr>
+
+                <!--Second row -> Main content -->
+                <tr>
+                    <td class="auto-style2">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            <asp:Literal ID="MainContentText" runat="server" Text="<p>MAIN CONTENT</p>" />
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+
+                <!--Third row -> Footer -->
+                <tr>
+                    <td>
+                        <asp:Panel runat="server">
+                            <footer>
+                                <asp:Panel CssClass="footer" runat="server">
+                                    <asp:Panel CssClass="col-1" runat="server">
+                                        <asp:Literal ID="UsefulLinks" runat="server" Text="<h3>USEFUL LINKS</h3>" />
+
+                                        <!-- Footer menu items -->
+                                        <asp:Panel CssClass="footerPages" runat="server">
+                                            <asp:Menu ID="Menu3" runat="server" Orientation="Horizontal" CssClass="asp-menu">
+                                                <Items>
+                                                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Prices" Value="Prices" NavigateUrl="~/Prices.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Opinions" Value="Opinions" NavigateUrl="~/Opinions.aspx"></asp:MenuItem>
+                                                    <asp:MenuItem Text="Contact" Value="Contact" NavigateUrl="~/Contact.aspx"></asp:MenuItem>
+                                                </Items>
+                                            </asp:Menu>
+                                            <asp:Menu ID="AdminMenuFooter" runat="server" Orientation="Horizontal" CssClass="asp-menu adminMenuFooter" Visible="false">
+                                                <Items>
+                                                    <asp:MenuItem Text="Database" Value="Admin" NavigateUrl="~/DataBase.aspx"></asp:MenuItem>
+                                                </Items>
+                                            </asp:Menu>
+                                        </asp:Panel>
+
+                                    </asp:Panel>
+                                    <asp:Panel CssClass="col-2" runat="server">
+                                        <asp:Literal ID="NewsletterHeading" runat="server" Text="<h3>NEWSLETTER</h3>" />
+                                        <form>
+                                            <asp:TextBox ID="EmailTextBox1" runat="server" CssClass="form-input" Placeholder="Your Email Address" TextMode="Email" />
+                                            <asp:Panel runat="server">
+                                                <asp:Button ID="Button8" runat="server" Text="SUBSCRIBE NOW" />
+                                            </asp:Panel>
+                                        </form>
+                                    </asp:Panel>
+                                    <asp:Panel CssClass="col-3" runat="server">
+                                        <asp:Literal ID="MainBuildingHeading" runat="server" Text="<h3>Main building</h3>" />
+                                        <asp:Literal ID="MainBuildingAddress" runat="server" Text="<p>Street &quot;Rezbarska&quot; 47</p><p>Sofia, Bulgaria</p>" />
+                                    </asp:Panel>
+                                </asp:Panel>
+                            </footer>
+                        </asp:Panel>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <script src="js/jsMaster.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿.membership {
+    padding-top: 5px;
+}
+
+.btn-buy {
+  color: #fff;
+  background: #866699;
+  display: inline-block;
+  padding: 2px 30px;
+  text-decoration: none !important;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 19px;
+  border: 2px solid #fff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-buy:hover {
+  background-color: #6b527a;
+  transform: scale(1.05); 
+  color: white;
+}
+
+.membership-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #666;
+  margin-top: 30px;
+}
+
+.membership-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+  max-width: 500px; 
+  margin: 22px auto; 
+  margin-left: 70px !important;
+}
+
+.membership-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  background: #ededf8;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  padding: 10px;
+  max-width: 450px; 
+  width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-item:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.membership-container img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 15px;
+}
+
+.ms-description {
+  padding: 10px 10px;
+}
+
+.ms-description p {
+  font-size: 17px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.ms-description .ms-price {
+  color: #866699;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ms-title {
+  font-weight: bold;
+  font-size: 21px;
+  color: black;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}

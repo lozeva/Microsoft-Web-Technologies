@@ -1,0 +1,104 @@
+﻿.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding-top: 50px;
+    height: 685px;
+}
+
+.register-title {
+    font-size: 32px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.register-container {
+    background-color: #F9F9F9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 6px #6b527a;
+    width: 390px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 100%;
+    margin-top: 10px;
+    height: auto; 
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px !important;
+    border: 1px solid #ced4da; 
+    border-radius: 5px;
+    font-weight: normal; 
+    color: black !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.form-control::placeholder {
+    font-weight: bold;
+    color: #6f42c1; 
+}
+
+.form-control:focus {
+    border-color: #ced4da !important; 
+    box-shadow: 0 0 5px #9E95B1 !important; 
+    outline: none !important; 
+}
+
+.register-button {
+    background-color: #866699;
+    border: 2px solid #fff;
+    color: white;
+    padding: 5px 6px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 12px; 
+}
+
+.register-button:hover {
+    background-color: #6b527a;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-link-panel {
+    margin-top: 30px;
+    text-align: left; 
+    width: 100%; 
+}
+
+.login-link {
+    display: block;
+    margin-top: -15px;
+    font-size: 15px;
+    color: #6f42c1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-align: left; 
+    padding-left: 5px; 
+}
+
+.login-link:hover {
+    color: #5a379b;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: -20px;
+    margin-bottom: -5px;
+    display: none;
+    text-align: left;
+    padding-left: 5px;
+}

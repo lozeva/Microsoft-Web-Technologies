@@ -1,0 +1,43 @@
+﻿.users-panel {
+    margin: 80px auto; 
+    padding: 20px;
+    width: 90%; 
+    max-width: 1200px;
+    height: 513px;
+    align-content: center;
+}
+
+.users-panel .gridView {
+    width: 100%; 
+    min-height: 300px; 
+    margin: 10px 0; 
+}
+
+.gridView th, .gridView td {
+    text-align: center; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.gridView {
+    table-layout: fixed;
+    width: 100%; 
+    min-height: 300px; 
+    font-size: 18px;
+}
+
+.gridView td a {
+    margin: 0 5px;
+    padding: 5px 10px; 
+    text-decoration: none; 
+}
+
+.gridView td a:hover {
+    text-decoration: underline;
+}
+
+.page-title {
+    margin-bottom: 0px;
+    text-align: center;
+}
